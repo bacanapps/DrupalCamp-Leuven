@@ -155,6 +155,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
             [scroll addSubview:sessionButton];
         }
     }
+
+    scroll.contentSize = CGSizeMake(self.view.frame.size.width, offset + 95);
+
 }
 
 - (void)pushSession:(UIButton *)sender

@@ -167,26 +167,18 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
     backView.frame = CGRectMake(backView.frame.origin.x, backView.frame.origin.y, backView.frame.size.width, favButton.frame.origin.y + favButton.frame.size.height);
 
-    if(!_calledFromSpeakerViewController) {
+    UIButton *speakerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [speakerButton addTarget:self
+                      action:@selector(pushSpeaker:)
+          forControlEvents:UIControlEventTouchDown];
+    [speakerButton setTitle:[NSString stringWithFormat:@"%@ %@", _session.speaker.firstName, _session.speaker.lastName] forState:UIControlStateNormal];
+    speakerButton.frame = CGRectMake(10, backView.frame.origin.y + backView.frame.size.height + 10, self.view.frame.size.width - 20, 55.0);
+    speakerButton.backgroundColor = UIColorFromRGB(0x3992c2);    
+    [scroll addSubview:speakerButton];
 
-        UIButton *speakerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [speakerButton addTarget:self
-                          action:@selector(pushSpeaker:)
-              forControlEvents:UIControlEventTouchDown];
-        [speakerButton setTitle:[NSString stringWithFormat:@"%@ %@", _session.speaker.firstName, _session.speaker.lastName] forState:UIControlStateNormal];
-        speakerButton.frame = CGRectMake(10, backView.frame.origin.y + backView.frame.size.height + 10, self.view.frame.size.width - 20, 55.0);
-        speakerButton.backgroundColor = UIColorFromRGB(0x3992c2);    
-        [scroll addSubview:speakerButton];
+    scroll.contentSize = CGSizeMake(self.view.frame.size.width, speakerButton.frame.origin.y + speakerButton.frame.size.height + 105);
 
-        scroll.contentSize = CGSizeMake(self.view.frame.size.width, speakerButton.frame.origin.y + speakerButton.frame.size.height + 105);
-
-    }
-    else {
-        scroll.contentSize = CGSizeMake(self.view.frame.size.width, backView.frame.origin.y + backView.frame.size.height + 105);
-
-    }
-    
-    [self.view addSubview:scroll];
+     [self.view addSubview:scroll];
 
 }
 

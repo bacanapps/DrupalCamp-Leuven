@@ -17,7 +17,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         __sharedInstance = [[DCLAPIClient alloc] initWithBaseURL:
-                            [NSURL URLWithString:@"http://dcleuven-api.timleytens.be:8080/api/"]];
+                            [NSURL URLWithString:@"http://dcleuven-api.timleytens.be/api/"]];
     });
     return __sharedInstance;
 }

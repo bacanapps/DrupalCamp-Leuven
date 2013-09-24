@@ -64,7 +64,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     _namesLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(20, 135, 280, 60)];
     _namesLabel.backgroundColor = [UIColor clearColor];
 
-    _namesLabel.text = @"@TimLeytens - iOS & Drupal developer\n@Swentel - Android & Drupal developer\n@LeenVS - Graphic designer";
+    _namesLabel.text = @"@TimLeytens\n@Swentel\n@LeenVS";
     _namesLabel.font = [DCLRegularFont sharedInstance];
     _namesLabel.textColor = UIColorFromRGB(0x4b4745);
     _namesLabel.numberOfLines = 0;
@@ -80,10 +80,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     [self.view addSubview:_namesLabel];
 
-    _codeLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(20, 245, 280, 80)];
+    _codeLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(20, 225, 280, 80)];
     _codeLabel.backgroundColor = [UIColor clearColor];
 
-    _codeLabel.text = @"iOS: \nhttp://github.com/TimLeytens/drupalcamp \nAndroid: http://github.com/swentel/drupalcamp";
+    _codeLabel.text = @"http://github.com/TimLeytens/drupalcamp \nhttp://github.com/swentel/drupalcamp";
     _codeLabel.font = [DCLRegularFont sharedInstance];
     _codeLabel.textColor = UIColorFromRGB(0x4b4745);
     _codeLabel.numberOfLines = 0;
